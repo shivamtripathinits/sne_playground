@@ -5,6 +5,12 @@ import React, { useState, useEffect } from "react";
 import ExpandableList from "./components/ExpandableList";
 
 function App() {
+  const company_name = [
+    "Weyerhaeuser",
+    "Facebook",
+    "Informacion Corporativa",
+    "The Home Depot",
+  ];
   const project_list = [
     "http://investor.weyerhaeuser.com/events-and-presentations",
     "https://investor.fb.com/investor-events/",
@@ -61,52 +67,63 @@ function App() {
       <div className="second_heading">
         <Header title="Company Selector" />
       </div>
-
       <div className="company_images">
         <table style={{ borderSpacing: 10, width: "100%" }}>
           <th style={{ padding: 20 }}>
-            <img
-              class="image_button"
-              style={one ? { borderWidth: 8 } : { borderWidth: "thin" }}
-              src="logos/logo_0.png"
-              alt="Company 1"
-              onClick={() => enable1(!one)}
-            ></img>
+            <figure>
+              <img
+                className="image_button"
+                style={one ? { borderWidth: 8 } : { borderWidth: "thin" }}
+                src="logos/logo_0.png"
+                alt="Company 1"
+                onClick={() => enable1(!one)}
+              ></img>
+              <figcaption>{company_name[0]}</figcaption>
+            </figure>
           </th>
-          <th>
-            <img
-              class="image_button"
-              style={two ? { borderWidth: 8 } : { borderWidth: "thin" }}
-              src="logos/logo_1.png"
-              alt="Company 2"
-              onClick={() => enable2(!two)}
-            ></img>
+          <th style={{ padding: 20 }}>
+            <figure>
+              <img
+                className="image_button"
+                style={two ? { borderWidth: 8 } : { borderWidth: "thin" }}
+                src="logos/logo_1.png"
+                alt="Company 2"
+                onClick={() => enable2(!two)}
+              ></img>
+              <figcaption>{company_name[1]}</figcaption>
+            </figure>
           </th>
-          <th>
-            <img
-              class="image_button"
-              style={
-                three
-                  ? { borderWidth: 8, backgroundColor: "blue" }
-                  : { borderWidth: "thin", backgroundColor: "blue" }
-              }
-              src="logos/logo_2.png"
-              alt="Company 3"
-              onClick={() => enable3(!three)}
-            ></img>
+          <th style={{ padding: 20 }}>
+            <figure>
+              <img
+                className="image_button"
+                style={
+                  three
+                    ? { borderWidth: 8, backgroundColor: "blue" }
+                    : { borderWidth: "thin", backgroundColor: "blue" }
+                }
+                src="logos/logo_2.png"
+                alt="Company 3"
+                onClick={() => enable3(!three)}
+              ></img>
+              <figcaption>{company_name[2]}</figcaption>
+            </figure>
           </th>
-          <th>
-            <img
-              class="image_button"
-              style={
-                four
-                  ? { borderWidth: 8, backgroundColor: "orange" }
-                  : { borderWidth: "thin", backgroundColor: "orange" }
-              }
-              src="logos/logo_3.png"
-              alt="Company 4"
-              onClick={() => enable4(!four)}
-            ></img>
+          <th style={{ padding: 20 }}>
+            <figure>
+              <img
+                className="image_button"
+                style={
+                  four
+                    ? { borderWidth: 8, backgroundColor: "orange" }
+                    : { borderWidth: "thin", backgroundColor: "orange" }
+                }
+                src="logos/logo_3.png"
+                alt="Company 4"
+                onClick={() => enable4(!four)}
+              ></img>
+              <figcaption>{company_name[3]}</figcaption>
+            </figure>
           </th>
         </table>
       </div>

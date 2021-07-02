@@ -1,15 +1,16 @@
-import Pdf from "./Pdf"
+import Pdf from "./Pdf";
 
-const Pdfs = ({list_pdfs}) => {
-    return (
-        
-        <ol >
-        {list_pdfs.map((pdf)=>(
-           <li id="row"><Pdf key={pdf._id} pdf={pdf}/> </li>
-        ))}
-        </ol>
-        
-    )
-}
+const Pdfs = ({ list_pdfs }) => {
+  let position = 0;
+  return (
+    <div>
+      {list_pdfs.map((pdf) => (
+        <div id="row">
+          <Pdf key={pdf._id} pdf={pdf} position={(position = position + 1)} />{" "}
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default Pdfs
+export default Pdfs;
