@@ -8,7 +8,7 @@ from config.db import conn
 import json
 import scraper_date
 from fastapi_utils.tasks import repeat_every
-import scraper
+
 
 
 origins = [

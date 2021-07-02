@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 .App {
-  text-align:center;
-  margin:0;
-  padding:0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   /* line-height: 1.15; */
-  letter-spacing: -.003em;
-  font-family: 'Muli', sans-serif;
+  letter-spacing: -0.003em;
+  font-family: "Muli", sans-serif;
 }
 
-.btnn{
+.btnn {
   background-size: 100%;
   height: 100px;
   width: 100px;
@@ -23,33 +23,35 @@
   /* display: inline-block; */
   font-size: 32px;
 }
-.btn{
+.btn {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 32px;
 }
-.show{
+.show {
   margin-inline: 300px;
   font-size: 20px;
   text-align: center;
   background-color: hsla(60, 7%, 5%, 0.576);
   padding: 20px 10px;
-  
 }
-.first_heading{
+.first_heading {
   background-color: #00000093;
   color: white;
   padding: 20px 10px;
 }
-.second_heading{
+.second_heading {
   background-color: #a71a1a93;
   color: rgb(0, 0, 0);
   padding: 20px 10px;
+  font-size: larger;
 }
-.expand{
+.expand {
   color: #112ca7;
+  display: inline;
+  margin: 10px;
 }
 .hover-nav li {
   float: left;
@@ -65,11 +67,10 @@
   z-index: 0;
 }
 
-#row:hover *{
+#row:hover * {
   background-color: rgb(15, 4, 4);
   color: white;
 }
-
 
 .dropdown {
   position: relative;
@@ -96,7 +97,7 @@
   padding: 5px;
 }
 
-.row{
+.row {
   display: inline-block;
   width: 100%;
 }
@@ -106,11 +107,11 @@
   display: inline-block;
 }
 
-.image_button{
+.image_button {
   align-self: center;
   padding: 5px;
   /* padding: 20px; */
-  border: 5px solid rgb(0, 0, 0)
+  border: 5px solid rgb(0, 0, 0);
 }
 .inline {
   display: inline;
@@ -120,6 +121,6 @@
   float: right;
   padding-right: 20px;
 }
-.company_images{
+.company_images {
   background-color: rgb(141, 132, 132);
 }

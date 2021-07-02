@@ -15,7 +15,7 @@ import re
 from selenium.common.exceptions import WebDriverException
 
 
-months={"January":"01","Februray":"02","March":"03","April":"04","May":"05","June":"06","July":"07","August":"08","September":"09","October":"10","November":"11","December":"12"}
+months={"January":"01","February":"02","March":"03","April":"04","May":"05","June":"06","July":"07","August":"08","September":"09","October":"10","November":"11","December":"12"}
 months_short={"Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":"06","Jul":"07","Aug":"08","Sep":"09","Oct":"10","Nov":"11","Dec":"12"}
 
 project_list=[
@@ -199,13 +199,25 @@ def scrap(url,position,first_class,depth,date_class):
             s=item[1]
             s=s.replace(' ','%20')
             item[1]=s
-            try:
-                pdf=pdfx.PDFx(item[1])
-                date=pdf.get_metadata().get("CreationDate")
-                item[2]=date[2:8]
-            except:
-                print("Broken Link")
-    
+            if(item[2]==''):
+                try:
+                    pdf=pdfx.PDFx(item[1])
+                    date=pdf.get_metadata().get("CreationDate")
+                    item[2]=date[2:8]
+                except:
+                    print("Broken Link")
+            else:
+                date=item[2]
+                box=date.split(',')
+                month=box[1]
+                month=month.strip()
+                cube=month.split(' ')
+                month=cube[0]
+                year=box[2]
+                year=year.strip()
+                year=year[0:4]
+                item[2]=year+(months[month])
+        # print(item[2])
     for item in lists:
             # print(item)
             collection_pdfs.update_one({'pdf_link':item[1]},{"$set":{'company_code':website.position,'pdf_name':item[0],'pdf_date':item[2]}},upsert=True)
@@ -215,3 +227,4 @@ def main_scraper():
         x=i
         scrap(project_list[x][0],project_list[x][1],project_list[x][2],project_list[x][3],project_list[x][4])
         print("**************************************************")
+
